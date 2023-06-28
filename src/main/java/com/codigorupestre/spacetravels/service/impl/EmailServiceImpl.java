@@ -34,7 +34,7 @@ public class EmailServiceImpl implements EmailService {
 			
 			message.setFrom(new InternetAddress("ecm3198@gmail.com"));
 			message.setRecipients(MimeMessage.RecipientType.TO, user.getEmail());
-		    message.setContent(getHTML(user), "text/html; charset=utf-8");
+		    message.setContent(getHTMLString(user), "text/html; charset=utf-8");
 		    message.setSubject("Confirmation of my account to SpaceTravels site");
 		    mailSender.send(message);
 		
@@ -45,6 +45,20 @@ public class EmailServiceImpl implements EmailService {
 		}
 		
 		
+	}
+	
+	
+	
+	private String getHTMLString(SpaceTravelerRequest request) {
+		String htmlEmail = "<html>\n"
+				+ " <head>\n"
+				+ " </head>\n"
+				+ " <body>\n"
+				+ "   <h1>Welcome Space Traveler: " + request.getFullName() + "<h1>\n"
+				+ " </body>\n"
+				+ "</html>";
+		
+		return htmlEmail;
 	}
 	
 	
