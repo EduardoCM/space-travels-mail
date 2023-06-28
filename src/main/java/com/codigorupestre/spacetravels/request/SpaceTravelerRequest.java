@@ -5,7 +5,7 @@ import java.io.Serializable;
 import lombok.Data;
 
 @Data
-public class UserRequest implements Serializable {
+public class SpaceTravelerRequest implements Serializable {
 	
 	private static final long serialVersionUID = -16455926274239985L;
 	
@@ -16,6 +16,8 @@ public class UserRequest implements Serializable {
 	private String planet;
 	
 	private String country;
+	
+	private boolean active;
 	
 	
 

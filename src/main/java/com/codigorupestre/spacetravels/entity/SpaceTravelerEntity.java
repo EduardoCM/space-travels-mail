@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "User")
-public class UserEntity implements Serializable {
+@Entity(name = "spaceTraveler")
+public class SpaceTravelerEntity implements Serializable {
 
 	private static final long serialVersionUID = -1278062967038960963L;
 
@@ -30,5 +30,7 @@ public class UserEntity implements Serializable {
 	private String planet;
 
 	private String country;
+	
+	private boolean active;
 
 }

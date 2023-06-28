@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.codigorupestre.spacetravels.request.UserRequest;
+import com.codigorupestre.spacetravels.request.SpaceTravelerRequest;
 import com.codigorupestre.spacetravels.service.EmailService;
 
 import jakarta.mail.MessagingException;
@@ -26,7 +26,7 @@ public class EmailServiceImpl implements EmailService {
 	private final JavaMailSender mailSender;
 	
 	@Override
-	public void sendMail(UserRequest user) {
+	public void sendMail(SpaceTravelerRequest user) {
 		
 		MimeMessage message = mailSender.createMimeMessage();
 		
@@ -48,7 +48,7 @@ public class EmailServiceImpl implements EmailService {
 	}
 	
 	
-	private String getHTML(UserRequest user) {
+	private String getHTML(SpaceTravelerRequest user) {
 		String htmlEmail = null;
 		try {
 			var lines = Files.lines(Paths.get("src/main/resources/mail/WelcomeUser.html"));
